@@ -15,10 +15,19 @@ const app = express()
 require('./config')(app)
 
 // default value for title local
-const projectName = 'lab-express-cinema'
+const projectName = 'Cinema Ironhack'
 const capitalized = string => string[0].toUpperCase() + string.slice(1).toLowerCase()
 
-app.locals.title = `${capitalized(projectName)}- Generated with Ironlauncher`
+app.locals.title = `${capitalized(projectName)}`
+
+
+//This is for resquiring just one movie
+// app.get('/movies/:id', (req, res) => {
+//     res.send(req.allmovies);
+//   });
+  
+
+
 
 // 👇 Start handling routes here
 const index = require('./routes/index')
